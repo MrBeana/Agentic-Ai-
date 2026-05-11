@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AI Medical Assistant — Demo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,700;1,400&display=swap');
+
+:root {
+  --bg:#080c10; --surface:#0f1520; --surface2:#162030; --surface3:#1c2a3c;
+  --border:#1e3050; --accent:#00c8ff; --green:#00e5a0; --red:#ff5c7a;
+  --amber:#ffb84d; --text:#d8e8f8; --muted:#5a7898;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--text)}
+
+.header{
+  background:linear-gradient(135deg,#0a1828,#080c10);
+  border-bottom:1px solid var(--border);padding:24px 40px;
+  display:flex;align-items:center;gap:16px;position:relative;overflow:hidden;
+}
+.header::before{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;
+  border-radius:50%;background:radial-gradient(circle,rgba(0,200,255,.07),transparent 70%)}
+.icon{width:50px;height:50px;border-radius:14px;
+  background:linear-gradient(135deg,#005580,#00c8ff);
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  box-shadow:0 4px 18px rgba(0,200,255,.3)}
+.htitle h1{font-family:'Fraunces',serif;font-size:24px;
+  background:linear-gradient(90deg,#e0f4ff,var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.htitle p{color:var(--muted);font-size:12px;margin-top:3px}
+.badge{margin-left:auto;background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.3);
+  border-radius:20px;padding:5px 14px;font-size:11px;color:var(--green);font-family:'JetBrains Mono',monospace}
+
+.disclaimer{margin:14px 40px 0;background:rgba(255,92,122,.08);
+  border:1px solid rgba(255,92,122,.3);border-radius:10px;padding:10px 16px;
+  font-size:11px;color:#ff8fa3;line-height:1.6}
+
+.tabs{display:flex;gap:6px;padding:16px 40px 0}
+.tab{padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;
+  cursor:pointer;background:var(--surface);border:1px solid var(--border);color:var(--muted)}
+.tab.active{background:linear-gradient(135deg,#005580,#0099cc);color:white;border-color:transparent}
+
+.main{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;padding:18px 40px}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.card-pad{padding:18px}
+
+.analysis-box{padding:20px;font-size:13px;line-height:1.9;max-height:520px;overflow-y:auto}
+
+.section-head{color:var(--accent);font-weight:700;font-size:13px;margin:14px 0 6px;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
+
+.bullet{margin:4px 0 4px 16px;color:var(--text);font-size:12.5px}
+.badge-tag{display:inline-block;border-radius:4px;padding:2px 8px;font-size:11px;
+  font-family:'JetBrains Mono',monospace;margin-left:6px}
+.tag-high{background:rgba(255,92,122,.15);color:var(--red)}
+.tag-mod{background:rgba(255,184,77,.12);color:var(--amber)}
+.tag-low{background:rgba(0,229,160,.1);color:var(--green)}
+.tag-flag{background:rgba(255,92,122,.12);color:var(--red)}
+
+.alert-box{background:rgba(255,92,122,.07);border:1px solid rgba(255,92,122,.25);
+  border-radius:8px;padding:12px 14px;font-size:12px;color:#ff8fa3;margin-top:8px}
+
+.right-col{display:flex;flex-direction:column;gap:14px}
+.stat-box{background:var(--surface2);border:1px solid rgba(0,200,255,.2);
+  border-radius:10px;padding:14px 16px;font-size:13px}
+.stat-box ul{margin:8px 0 0 16px;padding:0}
+.stat-box li{color:var(--muted);margin:3px 0;font-size:11px;font-family:'JetBrains Mono',monospace}
+
+.excerpt{background:var(--surface2);border-left:3px solid var(--accent2,var(--green));
+  border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:10px;font-size:11px;
+  color:var(--muted);line-height:1.6;font-family:'JetBrains Mono',monospace}
+.excerpt .src{color:var(--accent);font-size:10px;margin-bottom:5px;font-weight:600}
+.accent2{color:var(--green)}
+
+.vital-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.vital-chip{background:var(--surface3);border:1px solid var(--border);border-radius:8px;
+  padding:8px 12px;font-size:11px}
+.vital-val{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;margin-top:2px}
+.vital-val.warn{color:var(--amber)} .vital-val.bad{color:var(--red)} .vital-val.ok{color:var(--green)}
+
+.footer{text-align:center;color:var(--muted);font-size:11px;padding:18px 40px;
+  border-top:1px solid var(--border);margin-top:10px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="icon">🏥</div>
+  <div class="htitle">
+    <h1>AI Medical Assistant</h1>
+    <p>RAG-powered patient report analysis · Powered by OpenAI GPT</p>
+  </div>
+  <div class="badge">🔒 Data stays local</div>
+</div>
+
+<div class="disclaimer">
+  ⚠️ <strong>Medical Disclaimer:</strong> This AI tool is for informational &amp; educational purposes only.
+  It does NOT replace professional medical advice, diagnosis, or treatment.
+</div>
+
+<div class="tabs">
+  <div class="tab">🔑 Setup</div>
+  <div class="tab">📁 Documents</div>
+  <div class="tab active">🔬 Analyse Report</div>
+  <div class="tab">💬 Ask the Report</div>
+  <div class="tab">📖 About</div>
+</div>
+
+<div class="main">
+
+  <!-- Analysis Output -->
+  <div class="card">
+    <div class="analysis-box">
+      <div class="section-head">🧾 PATIENT SUMMARY</div>
+      <p style="font-size:12.5px;line-height:1.8;color:var(--text)">
+        John Matthews, a 54-year-old male, presents with 3 weeks of fatigue, exertional dyspnoea,
+        and chest tightness. He has a background of Type 2 Diabetes (HbA1c 7.9%), Hypertension
+        (BP 148/94), Hyperlipidaemia (LDL 138), and is a former smoker. Labs reveal iron-deficiency
+        anaemia (Hb 11.8), borderline renal impairment (eGFR 62), and mildly elevated BNP (145 pg/mL).
+        ECG shows LVH pattern, raising cardiac concern.
+      </p>
+
+      <div class="section-head">🔬 KEY EXTRACTED INFORMATION</div>
+      <div class="vital-grid">
+        <div class="vital-chip">BP<div class="vital-val warn">148/94 mmHg</div></div>
+        <div class="vital-chip">HbA1c<div class="vital-val bad">7.9%</div></div>
+        <div class="vital-chip">Hb<div class="vital-val bad">11.8 g/dL</div></div>
+        <div class="vital-chip">LDL<div class="vital-val bad">138 mg/dL</div></div>
+        <div class="vital-chip">eGFR<div class="vital-val warn">62 mL/min</div></div>
+        <div class="vital-chip">BNP<div class="vital-val warn">145 pg/mL</div></div>
+      </div>
+      <div class="bullet">• Medications: Metformin 1000mg BD, Lisinopril 10mg, Atorvastatin 40mg, Aspirin 81mg</div>
+      <div class="bullet">• Iron studies: Ferritin 9 ng/mL ↓↓, TIBC 420 ↑, Serum Iron 45 ↓</div>
+      <div class="bullet">• BMI: 28.4 (overweight), former smoker (20 pack-years)</div>
+
+      <div class="section-head">🩺 POSSIBLE DIAGNOSES</div>
+      <div class="bullet">1. Iron-Deficiency Anaemia <span class="badge-tag tag-high">HIGH confidence</span></div>
+      <div class="bullet" style="color:var(--muted);margin-left:32px">Low ferritin (9), low serum iron, elevated TIBC, microcytic MCV (72 fL)</div>
+      <div class="bullet">2. Poorly Controlled T2DM + Hypertension <span class="badge-tag tag-high">HIGH</span></div>
+      <div class="bullet">3. Early Heart Failure / LVH <span class="badge-tag tag-mod">MODERATE</span></div>
+      <div class="bullet" style="color:var(--muted);margin-left:32px">Elevated BNP, ankle oedema, LVH on ECG, cardiac murmur</div>
+      <div class="bullet">4. CKD Stage 2 <span class="badge-tag tag-mod">MODERATE</span></div>
+      <div class="bullet">5. GI Blood Loss (source of iron deficiency) <span class="badge-tag tag-low">LOW–MOD</span></div>
+
+      <div class="section-head">⚕️ PRECAUTIONS & RECOMMENDATIONS</div>
+      <div class="bullet">• Start Ferrous Sulfate 325mg daily; repeat CBC in 8 weeks</div>
+      <div class="bullet">• Increase Lisinopril to 20mg for BP control (target &lt;130/80)</div>
+      <div class="bullet">• Add Empagliflozin 10mg (glycaemic + cardiovascular benefit)</div>
+      <div class="bullet">• Escalate Atorvastatin to 80mg; LDL target &lt;100 in diabetics</div>
+      <div class="bullet">• Echocardiogram ordered to evaluate LVH and cardiac function</div>
+      <div class="bullet">• Nephrology referral; AVOID NSAIDs (contraindicated with CKD)</div>
+      <div class="bullet">• Low-sodium (&lt;2g/day), iron-rich diet; 30 min exercise 5×/week</div>
+
+      <div class="section-head">⚠️ RED FLAGS / URGENT ALERTS</div>
+      <div class="alert-box">
+        🔴 <strong>Elevated BNP (145 pg/mL) + LVH + ankle oedema</strong> — evaluate for early heart failure urgently.<br>
+        🔴 <strong>BP 148/94 in diabetic patient</strong> — significantly above target; medication adjustment urgent.<br>
+        🟡 <strong>HbA1c 7.9%</strong> — above target, increasing risk of complications.<br>
+        🟡 <strong>Hematocrit 35.2%</strong> — symptomatic anaemia; consider GI blood loss workup.
+      </div>
+
+      <div style="margin-top:16px;padding:10px 14px;background:rgba(0,200,255,.05);
+           border:1px solid rgba(0,200,255,.15);border-radius:8px;font-size:11px;color:var(--muted)">
+        ⚠️ This is an AI-generated analysis for reference only and does NOT replace professional medical advice.
+      </div>
+    </div>
+  </div>
+
+  <!-- Right panel -->
+  <div class="right-col">
+    <div class="stat-box">
+      <b>📚 1 file · 18 chunks indexed</b>
+      <ul><li>📄 patient_john_matthews_report.txt</li></ul>
+    </div>
+
+    <div class="card card-pad">
+      <div style="font-size:13px;font-weight:600;margin-bottom:12px;color:var(--muted)">
+        📄 Retrieved Excerpts Used
+      </div>
+      <div class="excerpt">
+        <div class="src">📌 Excerpt 1 · patient_john_matthews_report.txt · Score 0.87</div>
+        Iron Studies: Serum Iron 45 μg/dL (↓ Low), Ferritin 9 ng/mL (↓ Low — iron deficiency),
+        TIBC 420 μg/dL (↑ Elevated). CBC: Hemoglobin 11.8 g/dL (↓ Low), MCV 72 fL (↓ microcytic)…
+      </div>
+      <div class="excerpt">
+        <div class="src">📌 Excerpt 2 · patient_john_matthews_report.txt · Score 0.82</div>
+        BP 148/94 mmHg (↑ Elevated). HbA1c 7.9% (↑ Above target). BNP 145 pg/mL (↑ Mildly elevated).
+        ECG: Normal sinus rhythm. LVH pattern noted. Mild pitting oedema bilateral ankles…
+      </div>
+      <div class="excerpt">
+        <div class="src">📌 Excerpt 3 · patient_john_matthews_report.txt · Score 0.79</div>
+        Impression: 1. Iron-deficiency anemia 2. Poorly controlled T2DM 3. Hypertension 4.
+        Hyperlipidemia 5. Elevated BNP with LVH 6. Early CKD Stage 2…
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  🏥 AI Medical Assistant · FAISS · OpenAI · Gradio · Built for better healthcare
+</div>
+
+</body>
+</html>

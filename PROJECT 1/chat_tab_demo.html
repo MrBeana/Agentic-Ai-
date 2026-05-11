@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #0d0f14; --surface: #161922; --surface2: #1e2230;
+  --border: #2a2f3f; --accent: #6c63ff; --accent2: #00d4aa;
+  --text: #e8eaf0; --muted: #7a8099; --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--text); min-height: 100vh; }
+
+.header {
+  background: linear-gradient(135deg, #1a1d2e, #0d0f14);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 40px; display: flex; align-items: center; gap: 18px;
+}
+.logo {
+  width: 50px; height: 50px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center; font-size: 24px;
+}
+.logo-text h1 {
+  font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800;
+  background: linear-gradient(90deg, #fff, var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.logo-text p { color: var(--muted); font-size: 13px; margin-top: 3px; }
+
+.tabs { display: flex; gap: 6px; padding: 20px 40px 0; }
+.tab {
+  padding: 10px 20px; border-radius: 8px; font-family: 'Syne', sans-serif;
+  font-weight: 600; font-size: 14px; cursor: pointer; color: var(--muted);
+  background: var(--surface); border: 1px solid var(--border);
+}
+.tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+.main { display: grid; grid-template-columns: 3fr 2fr; gap: 20px; padding: 20px 40px; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+}
+
+/* Chat panel */
+.chat-panel { display: flex; flex-direction: column; }
+.chat-messages { padding: 20px; display: flex; flex-direction: column; gap: 16px; min-height: 380px; }
+.msg { max-width: 80%; padding: 14px 18px; border-radius: 12px; font-size: 14px; line-height: 1.6; }
+.msg.user { background: var(--accent); color: white; align-self: flex-end; border-radius: 12px 12px 4px 12px; }
+.msg.bot { background: var(--surface2); color: var(--text); align-self: flex-start; border-radius: 12px 12px 12px 4px; border: 1px solid var(--border); }
+.msg .src { font-size: 11px; color: var(--accent2); margin-top: 6px; font-family: 'DM Mono', monospace; }
+
+.chat-input { display: flex; gap: 10px; padding: 16px 20px; border-top: 1px solid var(--border); }
+.chat-input input {
+  flex: 1; background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 16px; color: var(--text); font-family: 'DM Sans', sans-serif;
+  font-size: 14px; outline: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #8b83ff); color: white;
+  border: none; border-radius: 8px; padding: 12px 20px;
+  font-family: 'Syne', sans-serif; font-weight: 600; font-size: 14px; cursor: pointer;
+}
+
+/* Right panel */
+.right-panel { display: flex; flex-direction: column; gap: 16px; }
+
+.status-box {
+  background: var(--surface2); border: 1px solid var(--accent);
+  border-radius: 8px; padding: 16px;
+}
+.status-box h4 { font-family: 'Syne', sans-serif; font-size: 14px; margin-bottom: 10px; }
+.file-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin: 6px 0; font-family: 'DM Mono', monospace; }
+.chip { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; font-size: 11px; color: var(--accent2); font-family: 'DM Mono', monospace; }
+
+.context-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+.context-panel h4 { font-family: 'Syne', sans-serif; font-size: 14px; margin-bottom: 12px; color: var(--muted); }
+.ctx-chunk { background: var(--surface2); border-left: 3px solid var(--accent2); border-radius: 0 6px 6px 0; padding: 10px 14px; margin-bottom: 10px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+.ctx-chunk .chunk-src { font-family: 'DM Mono', monospace; color: var(--accent2); font-size: 11px; margin-bottom: 6px; }
+
+.footer { text-align: center; color: var(--muted); font-size: 12px; padding: 20px 40px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">🔍</div>
+  <div class="logo-text">
+    <h1>RAG Intelligence</h1>
+    <p>Retrieval-Augmented Generation · Powered by Claude + FAISS</p>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active">💬 Chat</div>
+  <div class="tab">📁 Documents</div>
+  <div class="tab">⚙️ Settings</div>
+  <div class="tab">📖 About</div>
+</div>
+
+<div class="main">
+
+  <!-- Chat -->
+  <div class="card chat-panel">
+    <div class="chat-messages">
+      <div class="msg user">What are the three main types of machine learning?</div>
+      <div class="msg bot">
+        Based on the provided documents, there are three main types of machine learning:
+        <br><br>
+        <strong>1. Supervised Learning</strong> — The algorithm is trained on labeled data, learning to map inputs to outputs.
+        <br><br>
+        <strong>2. Unsupervised Learning</strong> — The algorithm finds patterns in unlabeled data without explicit labels.
+        <br><br>
+        <strong>3. Reinforcement Learning</strong> — The algorithm learns by interacting with an environment and receiving rewards or penalties.
+        <div class="src">📄 Source: artificial_intelligence_overview.txt · Chunk 3 · Score: 94.2%</div>
+      </div>
+
+      <div class="msg user">Who landed on the Moon first and when?</div>
+      <div class="msg bot">
+        According to the document, on <strong>July 20, 1969</strong>, Apollo 11 astronauts <strong>Neil Armstrong</strong> and <strong>Buzz Aldrin</strong> became the first humans to walk on the Moon, while Michael Collins orbited above. Neil Armstrong's famous words as he stepped onto the lunar surface were: "That's one small step for man, one giant leap for mankind."
+        <div class="src">📄 Source: space_exploration.txt · Chunk 5 · Score: 91.7%</div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Ask anything about your documents…" value="How much have global temperatures risen?">
+      <button class="btn-primary">Ask ↵</button>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="right-panel">
+    <div class="card" style="padding: 16px;">
+      <div style="font-family: 'Syne', sans-serif; font-size: 14px; margin-bottom: 12px;">📂 Knowledge Base</div>
+      <div class="status-box">
+        <h4>📚 3 files · 127 chunks indexed</h4>
+        <div class="file-item">📄 artificial_intelligence_overview.txt <span class="chip">42 chunks</span></div>
+        <div class="file-item">📄 climate_change_overview.txt <span class="chip">44 chunks</span></div>
+        <div class="file-item">📄 space_exploration.txt <span class="chip">41 chunks</span></div>
+      </div>
+    </div>
+
+    <div class="context-panel">
+      <h4>🔍 Retrieved Contexts (top 3)</h4>
+      <div class="ctx-chunk">
+        <div class="chunk-src">📌 space_exploration.txt · Chunk 5 · Score: 91.7%</div>
+        On July 20, 1969, Apollo 11 astronauts Neil Armstrong and Buzz Aldrin became the first humans to walk on the Moon, while Michael Collins orbited above. Armstrong's words as he stepped onto the lunar surface — "That's one small step for man…
+      </div>
+      <div class="ctx-chunk">
+        <div class="chunk-src">📌 space_exploration.txt · Chunk 4 · Score: 78.3%</div>
+        President John F. Kennedy's 1961 challenge to land a man on the Moon before the end of the decade galvanized the American space program. The Apollo program that followed represented one of history's greatest engineering achievements…
+      </div>
+      <div class="ctx-chunk">
+        <div class="chunk-src">📌 space_exploration.txt · Chunk 6 · Score: 65.1%</div>
+        Six successful Apollo Moon landings between 1969 and 1972 brought back 382 kilograms of lunar samples and transformed our understanding of the Moon's formation and history. The Apollo program employed over 400,000 people…
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Built with 🔍 FAISS · 🤗 sentence-transformers · 🎨 Gradio · 🤖 Anthropic Claude
+</div>
+
+</body>
+</html>

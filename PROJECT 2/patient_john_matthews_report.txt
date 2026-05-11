@@ -1,0 +1,129 @@
+PATIENT CLINICAL REPORT
+=======================
+
+Patient Information:
+  Name:     John Matthews
+  Age:      54 years
+  Sex:      Male
+  DOB:      March 12, 1970
+  Patient ID: PT-2024-00471
+  Date of Visit: November 15, 2024
+  Attending Physician: Dr. Sarah Chen, MD
+  Department: Internal Medicine
+
+Chief Complaint:
+  Patient presents with persistent fatigue, shortness of breath on exertion,
+  and occasional chest tightness for the past 3 weeks.
+
+Vital Signs:
+  Blood Pressure:   148/94 mmHg  (↑ Elevated)
+  Heart Rate:       88 bpm (Regular)
+  Respiratory Rate: 18 breaths/min
+  Temperature:      98.6°F (37.0°C)
+  SpO2:             96% on room air
+  Weight:           198 lbs (89.8 kg)
+  Height:           5'10" (177.8 cm)
+  BMI:              28.4 (Overweight)
+
+Medical History:
+  - Type 2 Diabetes Mellitus (diagnosed 2018, on Metformin 1000mg twice daily)
+  - Hypertension (diagnosed 2020, on Lisinopril 10mg daily)
+  - Hyperlipidemia (on Atorvastatin 40mg nightly)
+  - No known drug allergies (NKDA)
+  - Family history: Father had MI at age 61, mother has T2DM and HTN
+
+Current Medications:
+  1. Metformin 1000mg — twice daily (with meals)
+  2. Lisinopril 10mg  — once daily (morning)
+  3. Atorvastatin 40mg — once daily (bedtime)
+  4. Aspirin 81mg     — once daily
+
+Social History:
+  - Former smoker (quit 8 years ago, 20 pack-year history)
+  - Occasional alcohol (2–3 drinks/week)
+  - Sedentary occupation (office worker)
+  - Married, two children
+
+Physical Examination:
+  General:    Alert and oriented x3. Mild respiratory distress on walking.
+  Cardiovascular: Regular rate and rhythm. S1/S2 present. Grade II/VI systolic
+                  murmur at the left sternal border.
+  Respiratory:  Clear to auscultation bilaterally. No wheezing or crackles.
+  Abdomen:    Soft, non-tender. No organomegaly.
+  Extremities: Mild pitting edema in bilateral ankles (1+). No cyanosis or clubbing.
+  Neurological: Grossly intact. No focal deficits.
+
+Laboratory Results (Fasting):
+  Complete Blood Count:
+    Hemoglobin:     11.8 g/dL  (↓ Low — normal 13.5–17.5)
+    Hematocrit:     35.2%      (↓ Low)
+    WBC:            7,400/μL   (Normal)
+    Platelets:      225,000/μL (Normal)
+    MCV:            72 fL      (↓ Low — microcytic)
+
+  Comprehensive Metabolic Panel:
+    Glucose (fasting): 142 mg/dL  (↑ Elevated — target <130)
+    HbA1c:             7.9%       (↑ Above target — target <7%)
+    Creatinine:        1.3 mg/dL  (Borderline high)
+    eGFR:              62 mL/min/1.73m²  (Mild CKD stage 2)
+    Sodium:            138 mEq/L  (Normal)
+    Potassium:         4.1 mEq/L  (Normal)
+    ALT:               34 U/L     (Normal)
+    AST:               31 U/L     (Normal)
+
+  Lipid Panel:
+    Total Cholesterol: 218 mg/dL  (↑ Borderline high)
+    LDL:               138 mg/dL  (↑ High — target <100 for diabetic patients)
+    HDL:               38 mg/dL   (↓ Low — target >40)
+    Triglycerides:     210 mg/dL  (↑ High — target <150)
+
+  Cardiac Markers:
+    Troponin I:   0.02 ng/mL  (Normal — <0.04)
+    BNP:          145 pg/mL   (↑ Mildly elevated — normal <100)
+
+  Iron Studies:
+    Serum Iron:     45 μg/dL   (↓ Low)
+    Ferritin:       9 ng/mL    (↓ Low — iron deficiency)
+    TIBC:           420 μg/dL  (↑ Elevated)
+
+ECG Findings:
+  Normal sinus rhythm. Rate 88 bpm. No ST changes or T-wave inversions.
+  Left ventricular hypertrophy (LVH) pattern noted.
+
+Impression / Assessment:
+  1. Iron-deficiency anemia — likely from chronic blood loss or poor dietary intake
+     given the low iron, low ferritin, elevated TIBC, and microcytic anemia.
+  2. Poorly controlled Type 2 Diabetes Mellitus — HbA1c 7.9%, above target.
+  3. Hypertension — BP 148/94, not at goal (<130/80 for diabetic patients).
+  4. Hyperlipidemia — LDL 138, above target (<100) in diabetic patient.
+  5. Mildly elevated BNP with LVH pattern — cardiac workload monitoring needed.
+  6. Early Chronic Kidney Disease (CKD Stage 2) — eGFR 62.
+
+Plan:
+  1. Start Ferrous Sulfate 325mg once daily for iron-deficiency anemia.
+     Repeat CBC and iron studies in 8 weeks. GI referral if no response.
+  2. Increase Metformin to 2000mg/day (1000mg twice daily — already at dose).
+     Add Empagliflozin 10mg once daily for better glycemic and cardiovascular control.
+  3. Increase Lisinopril to 20mg daily for better BP control.
+     Target BP <130/80. Recheck in 2 weeks.
+  4. Increase Atorvastatin from 40mg to 80mg nightly for LDL target.
+  5. Order echocardiogram to evaluate LVH and cardiac function.
+  6. Nephrology referral for CKD monitoring.
+  7. Dietary referral: Low-sodium, low-carbohydrate, iron-rich diet.
+  8. Patient counseled on exercise: 30 min moderate activity, 5 days/week.
+
+Follow-up: 2 weeks for BP check; 3 months for full metabolic panel and HbA1c.
+
+Precautions & Patient Education:
+  - Monitor blood glucose daily. Report readings >200 mg/dL or <70 mg/dL.
+  - Take medications as prescribed. Do not skip doses.
+  - Report any chest pain, severe shortness of breath, or swelling immediately.
+  - Avoid NSAIDs (ibuprofen, naproxen) — contraindicated with CKD and heart disease.
+  - Limit sodium intake to <2g/day.
+  - Maintain adequate hydration.
+  - Schedule annual eye exam (diabetic retinopathy screening).
+  - Annual foot exam for neuropathy assessment.
+
+Signed: Dr. Sarah Chen, MD
+Internal Medicine | License #MC-209834
+November 15, 2024

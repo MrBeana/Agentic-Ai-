@@ -1,0 +1,12 @@
+# 🤖 Multi-Agent Shopping & Research System
+# pip install -r requirements.txt
+
+# LLM + Embeddings
+openai>=1.35.0
+
+# Vector Memory
+faiss-cpu>=1.8.0
+numpy>=1.26.0
+
+# UI
+gradio>=4.40.0

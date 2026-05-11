@@ -1,0 +1,50 @@
+[
+  {
+    "category": "Comparison",
+    "query": "Compare iPhone 16 Pro vs Samsung Galaxy S25 Ultra for photography. Budget $1200.",
+    "expected_agents": ["ResearchAgent", "ShoppingAgent", "ComparisonAgent", "CriticAgent"],
+    "notes": "Tests comparison routing — should trigger ComparisonAgent"
+  },
+  {
+    "category": "Shopping",
+    "query": "Best budget laptop for a college student under $700. Needs good battery life and is lightweight.",
+    "expected_agents": ["ResearchAgent", "ShoppingAgent", "CriticAgent"],
+    "notes": "Budget constraint extraction + tiered recommendations"
+  },
+  {
+    "category": "Home Gym",
+    "query": "I want to build a home gym. Budget $800. I want to focus on strength training.",
+    "expected_agents": ["ResearchAgent", "ShoppingAgent", "CriticAgent"],
+    "notes": "Non-tech product category — tests domain generality"
+  },
+  {
+    "category": "Headphones",
+    "query": "Best noise-cancelling headphones in 2025 — Sony WH-1000XM5 vs Bose QC45 vs Apple AirPods Max",
+    "expected_agents": ["ResearchAgent", "ShoppingAgent", "ComparisonAgent", "CriticAgent"],
+    "notes": "3-way comparison — tests multi-entity handling"
+  },
+  {
+    "category": "Monitor",
+    "query": "I need a 4K monitor for programming and some gaming. Under $600. What are my best options?",
+    "expected_agents": ["ResearchAgent", "ShoppingAgent", "CriticAgent"],
+    "notes": "Dual-use product — programming + gaming"
+  },
+  {
+    "category": "Research",
+    "query": "Research the best robot vacuum cleaners in 2025. I have pets and hardwood floors.",
+    "expected_agents": ["ResearchAgent", "ShoppingAgent", "CriticAgent"],
+    "notes": "Research-heavy query with specific use case"
+  },
+  {
+    "category": "Keyboard",
+    "query": "What are the best budget mechanical keyboards under $100 for typing? Compare top 3.",
+    "expected_agents": ["ResearchAgent", "ShoppingAgent", "ComparisonAgent", "CriticAgent"],
+    "notes": "Budget + comparison hybrid"
+  },
+  {
+    "category": "Gaming PC",
+    "query": "Help me choose between building a gaming PC or buying a PS5. Budget $600.",
+    "expected_agents": ["ResearchAgent", "ShoppingAgent", "ComparisonAgent", "CriticAgent"],
+    "notes": "Unconventional comparison — build vs buy"
+  }
+]

@@ -1,0 +1,21 @@
+# 🏥 AI Medical Assistant — Dependencies
+# pip install -r requirements.txt
+
+# OpenAI (LLM + Embeddings)
+openai>=1.35.0
+
+# Vector Search
+faiss-cpu>=1.8.0
+
+# Document Parsing
+pypdf>=4.3.0
+
+# UI
+gradio>=4.40.0
+
+# Numeric
+numpy>=1.26.0
+
+# Voice Input (Bonus Feature)
+SpeechRecognition>=3.10.0
+# PyAudio>=0.2.14      # Uncomment for live mic recording (requires portaudio system lib)

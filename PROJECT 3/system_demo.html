@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Multi-Agent System — Demo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg:#07090f; --surface:#0e1218; --surface2:#141c26; --surface3:#1a2438;
+  --border:#1e2d44; --blue:#00c8ff; --green:#00e5a0; --purple:#c084fc;
+  --amber:#ffb84d; --red:#ff5c7a; --text:#ccdde8; --muted:#4a6880;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);font-family:'Space Grotesk',sans-serif;color:var(--text);min-height:100vh}
+
+.header{background:linear-gradient(135deg,#0a1020,#07090f);border-bottom:1px solid var(--border);
+  padding:24px 40px;display:flex;align-items:center;gap:18px;position:relative;overflow:hidden}
+.header::after{content:'';position:absolute;right:-80px;top:-80px;width:300px;height:300px;
+  border-radius:50%;background:radial-gradient(circle,rgba(0,200,255,.06),transparent 70%);pointer-events:none}
+.logo{width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,#0055aa,#00c8ff);
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  box-shadow:0 6px 22px rgba(0,200,255,.25);flex-shrink:0}
+.ht h1{font-size:24px;font-weight:700;
+  background:linear-gradient(90deg,#e0f4ff,var(--blue),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ht p{color:var(--muted);font-size:12px;margin-top:3px}
+.pills{margin-left:auto;display:flex;gap:8px}
+.pill{border-radius:20px;padding:4px 12px;font-size:11px;font-family:'JetBrains Mono',monospace;border:1px solid;font-weight:500}
+.pb{background:rgba(0,200,255,.08);border-color:rgba(0,200,255,.3);color:var(--blue)}
+.pg{background:rgba(0,229,160,.08);border-color:rgba(0,229,160,.3);color:var(--green)}
+
+.tabs{display:flex;gap:6px;padding:14px 40px 0}
+.tab{padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;
+  background:var(--surface);border:1px solid var(--border);color:var(--muted);cursor:pointer}
+.tab.active{background:linear-gradient(135deg,#0055aa,#0088cc);color:white;border-color:transparent}
+
+.main{display:grid;grid-template-columns:1fr 1.1fr;gap:16px;padding:16px 40px}
+
+/* LEFT — Input + Timeline */
+.left{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px}
+.card-title{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:12px}
+
+.agent-grid{display:flex;flex-direction:column;gap:6px}
+.agent-row{display:flex;align-items:center;gap:10px;background:var(--surface2);
+  border-radius:8px;padding:8px 12px;border:1px solid var(--border)}
+.a-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;
+  justify-content:center;font-size:16px;flex-shrink:0}
+.a-name{font-weight:600;font-size:12px}
+.a-desc{color:var(--muted);font-size:11px;margin-top:1px}
+
+.query-box{background:var(--surface2);border:1px solid var(--blue);border-radius:10px;
+  padding:14px 16px;font-size:13px;color:var(--text);line-height:1.5}
+.query-label{font-size:11px;color:var(--muted);margin-bottom:6px;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
+
+.btn-run{background:linear-gradient(135deg,#0055aa,#00aae0);color:white;border:none;
+  border-radius:10px;padding:12px 24px;font-weight:700;font-size:14px;cursor:pointer;
+  box-shadow:0 4px 18px rgba(0,170,224,.3);width:100%;font-family:'Space Grotesk',sans-serif}
+
+/* Timeline */
+.timeline{display:flex;flex-direction:column;gap:5px}
+.tl-row{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;
+  background:var(--surface2);border-radius:7px;border:1px solid var(--border);font-size:11px}
+.tl-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.tl-badge{border-radius:5px;padding:2px 9px;font-size:10px;font-family:'JetBrains Mono',monospace;
+  border:1px solid;white-space:nowrap;flex-shrink:0;font-weight:600}
+.tl-action{color:var(--text);font-weight:500}
+.tl-detail{color:var(--muted);margin-left:6px}
+.tl-ts{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:9px;flex-shrink:0;margin-top:2px;margin-left:auto}
+
+/* RIGHT — Results */
+.right{display:flex;flex-direction:column;gap:14px}
+.result-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px}
+.rc-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.rc-icon{font-size:18px}
+.rc-title{font-size:13px;font-weight:600}
+.rc-badge{margin-left:auto;font-size:10px;font-family:'JetBrains Mono',monospace;
+  border-radius:4px;padding:2px 8px}
+
+.verdict-box{background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.2);
+  border-radius:8px;padding:12px;font-size:12px;line-height:1.7;margin-top:8px}
+.verdict-box b{color:var(--green)}
+
+.compare-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px;font-size:11px}
+.compare-cell{background:var(--surface2);border-radius:6px;padding:8px 10px;border:1px solid var(--border)}
+.compare-cell.win{border-color:rgba(0,229,160,.4);background:rgba(0,229,160,.05)}
+.cc-label{color:var(--muted);margin-bottom:3px;font-size:10px}
+.cc-val{font-weight:600;font-size:12px}
+.cc-val.good{color:var(--green)} .cc-val.meh{color:var(--amber)} .cc-val.bad{color:var(--red)}
+
+.rec-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
+.rec-item:last-child{border-bottom:none}
+.rec-rank{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;
+  justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.rec-info .rec-name{font-weight:600;font-size:13px}
+.rec-info .rec-price{color:var(--green);font-family:'JetBrains Mono',monospace;font-size:11px}
+.rec-info .rec-why{color:var(--muted);font-size:11px;margin-top:2px}
+.stars{color:var(--amber);font-size:13px}
+
+.mem-row{background:var(--surface2);border:1px solid var(--border);border-radius:5px;
+  padding:5px 10px;font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:4px}
+
+.footer{text-align:center;color:var(--muted);font-size:11px;padding:16px 40px;
+  border-top:1px solid var(--border);margin-top:6px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">🤖</div>
+  <div class="ht">
+    <h1>Multi-Agent AI System</h1>
+    <p>Shopping &amp; Research · OpenAI GPT + FAISS Memory</p>
+  </div>
+  <div class="pills">
+    <div class="pill pb">5 Specialist Agents</div>
+    <div class="pill pg">FAISS Memory</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active">🚀 Run Agent</div>
+  <div class="tab">📊 Results</div>
+  <div class="tab">🗺️ Execution Plan</div>
+  <div class="tab">🧠 Memory Explorer</div>
+  <div class="tab">📐 Architecture</div>
+</div>
+
+<div class="main">
+
+  <!-- LEFT -->
+  <div class="left">
+
+    <div class="card">
+      <div class="card-title">🤖 ACTIVE AGENTS</div>
+      <div class="agent-grid">
+        <div class="agent-row">
+          <div class="a-icon" style="background:rgba(0,200,255,.15);color:var(--blue)">🧠</div>
+          <div><div class="a-name" style="color:var(--blue)">OrchestratorAgent</div>
+            <div class="a-desc">Master planner — decomposes queries &amp; routes</div></div>
+        </div>
+        <div class="agent-row">
+          <div class="a-icon" style="background:rgba(0,229,160,.15);color:var(--green)">🔍</div>
+          <div><div class="a-name" style="color:var(--green)">ResearchAgent</div>
+            <div class="a-desc">Deep product research, market context &amp; specs</div></div>
+        </div>
+        <div class="agent-row">
+          <div class="a-icon" style="background:rgba(255,184,77,.15);color:var(--amber)">🛒</div>
+          <div><div class="a-name" style="color:var(--amber)">ShoppingAgent</div>
+            <div class="a-desc">Price analysis, deal scoring, recommendations</div></div>
+        </div>
+        <div class="agent-row">
+          <div class="a-icon" style="background:rgba(192,132,252,.15);color:var(--purple)">⚖️</div>
+          <div><div class="a-name" style="color:var(--purple)">ComparisonAgent</div>
+            <div class="a-desc">Head-to-head with winner verdicts</div></div>
+        </div>
+        <div class="agent-row">
+          <div class="a-icon" style="background:rgba(255,92,122,.15);color:var(--red)">🔎</div>
+          <div><div class="a-name" style="color:var(--red)">CriticAgent</div>
+            <div class="a-desc">Validates accuracy &amp; synthesises final answer</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="query-label">QUERY</div>
+      <div class="query-box">
+        Compare iPhone 16 Pro vs Samsung Galaxy S25 Ultra for photography. Budget $1200.
+      </div>
+      <br>
+      <button class="btn-run">⚡ Launch Agents</button>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🕐 AGENT TIMELINE</div>
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--green)"></div>
+          <div class="tl-badge" style="background:rgba(0,200,255,.1);border-color:rgba(0,200,255,.3);color:var(--blue)">🧠 Orchestrator</div>
+          <div class="tl-action">Plan ready <span class="tl-detail">4 agents → comparison query</span></div>
+          <div class="tl-ts">14:22:01</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--green)"></div>
+          <div class="tl-badge" style="background:rgba(0,229,160,.1);border-color:rgba(0,229,160,.3);color:var(--green)">🔍 ResearchAgent</div>
+          <div class="tl-action">Research complete <span class="tl-detail">1,540 chars</span></div>
+          <div class="tl-ts">14:22:06</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--green)"></div>
+          <div class="tl-badge" style="background:rgba(255,184,77,.1);border-color:rgba(255,184,77,.3);color:var(--amber)">🛒 ShoppingAgent</div>
+          <div class="tl-action">Recommendations ready <span class="tl-detail">1,812 chars</span></div>
+          <div class="tl-ts">14:22:13</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--green)"></div>
+          <div class="tl-badge" style="background:rgba(192,132,252,.1);border-color:rgba(192,132,252,.3);color:var(--purple)">⚖️ ComparisonAgent</div>
+          <div class="tl-action">Comparison done <span class="tl-detail">2 items</span></div>
+          <div class="tl-ts">14:22:19</div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot" style="background:var(--green)"></div>
+          <div class="tl-badge" style="background:rgba(255,92,122,.1);border-color:rgba(255,92,122,.3);color:var(--red)">🔎 CriticAgent</div>
+          <div class="tl-action">✅ Synthesis complete</div>
+          <div class="tl-ts">14:22:26</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🧠 AGENT MEMORY (FAISS)</div>
+      <div class="mem-row">[Orchestrator] PLAN for 'Compare iPhone 16 Pro vs Samsung…'</div>
+      <div class="mem-row">[ResearchAgent] RESEARCH: Both phones feature 200MP+ main cameras…</div>
+      <div class="mem-row">[ShoppingAgent] SHOPPING RECS: iPhone 16 Pro $999–$1199, S25 Ultra $1299…</div>
+      <div class="mem-row">[ComparisonAgent] COMPARISON iPhone vs S25: Camera winner S25 Ultra…</div>
+      <div class="mem-row">[CriticAgent] FINAL ANSWER: For photography-first users the S25 Ultra…</div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+
+    <!-- Shopping -->
+    <div class="result-card">
+      <div class="rc-header">
+        <div class="rc-icon">🛒</div>
+        <div class="rc-title">ShoppingAgent — Recommendations</div>
+        <div class="rc-badge" style="background:rgba(255,184,77,.1);color:var(--amber);border:1px solid rgba(255,184,77,.3)">✅ Done</div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-rank" style="background:rgba(0,229,160,.15);color:var(--green)">1</div>
+        <div class="rec-info">
+          <div class="rec-name">Samsung Galaxy S25 Ultra</div>
+          <div class="rec-price">$1,199–$1,299  <span class="stars">★★★★★</span></div>
+          <div class="rec-why">Best camera system, zoom, S Pen — photography powerhouse</div>
+        </div>
+      </div>
+      <div class="rec-item">
+        <div class="rec-rank" style="background:rgba(0,200,255,.1);color:var(--blue)">2</div>
+        <div class="rec-info">
+          <div class="rec-name">iPhone 16 Pro</div>
+          <div class="rec-price">$999–$1,199  <span class="stars">★★★★½</span></div>
+          <div class="rec-why">Best video, ProRes, Apple ecosystem, compact form factor</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison -->
+    <div class="result-card">
+      <div class="rc-header">
+        <div class="rc-icon">⚖️</div>
+        <div class="rc-title">ComparisonAgent — Head-to-Head</div>
+        <div class="rc-badge" style="background:rgba(192,132,252,.1);color:var(--purple);border:1px solid rgba(192,132,252,.3)">✅ Done</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell"><div class="cc-label">CATEGORY</div><div class="cc-val"></div></div>
+        <div class="compare-cell"><div class="cc-label">iPhone 16 Pro</div><div class="cc-val" style="color:var(--blue)">Apple</div></div>
+        <div class="compare-cell win"><div class="cc-label">S25 Ultra ✅</div><div class="cc-val" style="color:var(--green)">Samsung</div></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell"><div class="cc-label">Camera</div></div>
+        <div class="compare-cell"><div class="cc-val meh">🟡 Great</div></div>
+        <div class="compare-cell win"><div class="cc-val good">✅ Best-in-class</div></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell"><div class="cc-label">Video</div></div>
+        <div class="compare-cell win"><div class="cc-val good">✅ ProRes/Log</div></div>
+        <div class="compare-cell"><div class="cc-val meh">🟡 Good</div></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell"><div class="cc-label">Value</div></div>
+        <div class="compare-cell win"><div class="cc-val good">✅ $999</div></div>
+        <div class="compare-cell"><div class="cc-val meh">🟡 $1299</div></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell"><div class="cc-label">Ecosystem</div></div>
+        <div class="compare-cell"><div class="cc-val meh">iOS only</div></div>
+        <div class="compare-cell win"><div class="cc-val good">✅ Cross-platform</div></div>
+      </div>
+    </div>
+
+    <!-- Final Answer -->
+    <div class="result-card">
+      <div class="rc-header">
+        <div class="rc-icon">🔎</div>
+        <div class="rc-title">CriticAgent — Final Answer</div>
+        <div class="rc-badge" style="background:rgba(255,92,122,.1);color:var(--red);border:1px solid rgba(255,92,122,.3)">✅ Verified</div>
+      </div>
+      <div class="verdict-box">
+        <b>Verdict:</b> For pure photography, choose the <b>Samsung Galaxy S25 Ultra</b> —
+        its 200MP sensor, 10x optical zoom, and AI scene optimisation are unmatched.
+        Choose the <b>iPhone 16 Pro</b> if you shoot video professionally (ProRes/Log),
+        are in the Apple ecosystem, or want a more compact device at $300 less.<br><br>
+        <b>Recommendation split:</b> 60% → S25 Ultra &nbsp; 40% → iPhone 16 Pro<br><br>
+        <b>⚡ Quick Action Plan:</b><br>
+        1. Try both in-store — camera feel matters<br>
+        2. Check carrier deals (up to $400 off trade-in)<br>
+        3. Buy 256GB — don't overpay for 512GB<br>
+        4. Use Samsung/Apple 0% financing if available
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  🤖 Multi-Agent AI · OrchestratorAgent · ResearchAgent · ShoppingAgent · ComparisonAgent · CriticAgent · FAISS Memory · OpenAI GPT
+</div>
+
+</body>
+</html>

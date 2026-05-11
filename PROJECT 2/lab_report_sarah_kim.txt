@@ -1,0 +1,126 @@
+LABORATORY REPORT
+=================
+Facility:    CityMed Diagnostic Labs
+Patient:     Sarah Kim
+Age/Sex:     42F
+DOB:         April 17, 1982
+Patient ID:  LAB-2024-09953
+Ordering Physician: Dr. Priya Nair, MD
+Collection Date: October 28, 2024
+Report Date:     October 29, 2024
+
+COMPLETE BLOOD COUNT (CBC WITH DIFFERENTIAL)
+---------------------------------------------
+Test                  Result       Reference Range      Flag
+Hemoglobin            9.2  g/dL    12.0–16.0           ↓ LOW
+Hematocrit            28.5 %       36.0–46.0           ↓ LOW
+RBC Count             3.1  M/μL    3.9–5.2             ↓ LOW
+MCV                   62   fL      80–100              ↓ LOW (microcytic)
+MCH                   18   pg      27.0–33.0           ↓ LOW
+MCHC                  29   g/dL    32.0–36.0           ↓ LOW
+RDW                   17.5 %       11.5–14.5           ↑ HIGH
+WBC Count             6.8  K/μL    4.5–11.0            Normal
+Neutrophils           58   %       40–70               Normal
+Lymphocytes           32   %       20–40               Normal
+Monocytes             8    %       2–10                Normal
+Eosinophils           2    %       0–6                 Normal
+Basophils             0    %       0–1                 Normal
+Platelet Count        312  K/μL    150–400             Normal
+
+IRON STUDIES
+------------
+Serum Iron            28   μg/dL   50–170              ↓ LOW
+TIBC                  480  μg/dL   250–370             ↑ HIGH
+Transferrin Sat       5.8  %       20–50               ↓ LOW
+Serum Ferritin        5    ng/mL   12–150              ↓ LOW (↓↓ critically low)
+
+THYROID FUNCTION
+----------------
+TSH                   0.35 mIU/L  0.40–4.50           ↓ Borderline low
+Free T4               1.42 ng/dL  0.82–1.77           Normal
+Free T3               3.1  pg/mL  2.0–4.4             Normal
+
+COMPREHENSIVE METABOLIC PANEL
+------------------------------
+Glucose (fasting)     98   mg/dL   70–99               Normal
+BUN (Urea)            14   mg/dL   7–25                Normal
+Creatinine            0.82 mg/dL  0.57–1.11           Normal
+eGFR                  >90  mL/min/1.73m²              Normal
+Sodium                137  mEq/L   136–145             Normal
+Potassium             3.8  mEq/L   3.5–5.1             Normal
+Chloride              102  mEq/L   98–107              Normal
+CO2 (Bicarbonate)     24   mEq/L   22–29               Normal
+Calcium               9.1  mg/dL   8.6–10.2            Normal
+Total Protein         7.2  g/dL    6.3–8.2             Normal
+Albumin               4.0  g/dL    3.5–5.0             Normal
+Total Bilirubin       0.7  mg/dL   0.2–1.2             Normal
+Direct Bilirubin      0.2  mg/dL   0.0–0.3             Normal
+ALT (SGPT)            22   U/L     7–56                Normal
+AST (SGOT)            25   U/L     10–40               Normal
+Alkaline Phosphatase  78   U/L     44–147              Normal
+
+HORMONES / REPRODUCTIVE
+------------------------
+LH                    12.4 IU/L   (Follicular: 2.4–12.6)   Normal
+FSH                   8.2  IU/L   (Follicular: 3.5–12.5)   Normal
+Estradiol             82   pg/mL  (Follicular: 27–122)      Normal
+Prolactin             14.2 ng/mL  2.8–29.2               Normal
+Progesterone          0.6  ng/mL  (Follicular: 0.1–0.9)    Normal
+
+VITAMIN LEVELS
+--------------
+Vitamin B12           412  pg/mL  200–900               Normal
+Vitamin D (25-OH)     18   ng/mL  30–100                ↓ INSUFFICIENT
+Folate (Serum)        8.2  ng/mL  >5.9                  Normal
+
+INFLAMMATORY MARKERS
+--------------------
+ESR                   34   mm/hr  0–20                  ↑ ELEVATED
+CRP (High-sensitivity) 4.2 mg/L  <1.0                  ↑ ELEVATED
+ANA (Antinuclear Ab)  Negative
+
+URINALYSIS
+----------
+Color:          Yellow (normal)
+Clarity:        Clear
+pH:             6.0 (normal 4.5–8.0)
+Specific Gravity: 1.018 (normal 1.005–1.030)
+Protein:        Negative
+Glucose:        Negative
+Ketones:        Negative
+Blood:          POSITIVE (1+)     ← Abnormal
+Leukocyte Esterase: Negative
+Nitrites:       Negative
+Microscopy:     3–5 RBC/HPF (abnormal — hematuria)
+
+CLINICAL INTERPRETATION NOTES:
+  The results indicate SEVERE IRON-DEFICIENCY ANEMIA:
+    - Ferritin 5 ng/mL (critically low), Serum Iron 28 μg/dL,
+      TIBC elevated at 480 μg/dL, Transferrin sat only 5.8%
+    - Microcytic (MCV 62 fL) hypochromic (MCHC 29) anemia pattern
+    - RDW 17.5% indicates anisocytosis (variable RBC sizes)
+
+  Hematuria (1+ blood on urinalysis, 3–5 RBC/HPF on microscopy):
+    - Requires further investigation. GI or GYN source of blood loss
+      should be evaluated as potential cause of iron-deficiency anemia.
+
+  Vitamin D insufficiency (18 ng/mL) — supplementation recommended.
+
+  Mildly elevated CRP and ESR — consider chronic inflammation or occult
+  blood loss contributing to anemia. Rule out celiac disease and IBD.
+
+  Borderline low TSH — repeat thyroid function in 6–8 weeks.
+
+RECOMMENDED FOLLOW-UP:
+  1. Iron replacement therapy (oral or IV per physician discretion)
+  2. GI evaluation: Upper and lower endoscopy to rule out GI blood loss
+  3. Gynecological evaluation: Rule out menorrhagia / fibroids
+  4. Vitamin D supplementation: 2000 IU daily, recheck in 3 months
+  5. Celiac antibodies (anti-tTG IgA) to rule out malabsorption
+  6. Repeat thyroid panel in 6–8 weeks
+  7. Stool occult blood test (FOBT)
+  8. Renal ultrasound if hematuria persists after gynaecological evaluation
+
+Report Verified By: Dr. James O'Brien, MD (Pathologist)
+Laboratory Director: CityMed Diagnostics
+CLIA #: 05D1099234

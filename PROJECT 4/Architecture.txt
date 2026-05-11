@@ -1,0 +1,57 @@
+The user wants a comprehensive AI Jathakam (Hindu horoscope) Reader project. This is a Kerala/South Indian context project. Let me build a full end-to-end system:
+Architecture:
+
+Upload Jathakam (PDF/Image/Screenshot)
+OCR (EasyOCR + Tesseract fallback)
+Structured Extraction (LLM-powered)
+Multi-Agent Processing
+RAG + Chat System
+Insights Dashboard with South Indian chart visualization
+
+Tech Stack:
+
+Gradio UI
+OpenAI (GPT-4o for vision OCR + processing)
+EasyOCR for image text extraction
+FAISS for RAG
+Custom South Indian chart SVG renderer
+Multi-language (Malayalam, English, Sanskrit)
+
+Let me plan the full project structure:
+
+
+jathakam_ai/
+├── app.py                    # Main Gradio app
+├── agents/
+│   ├── __init__.py
+│   ├── ocr_agent.py          # OCR + text extraction
+│   ├── extraction_agent.py   # Structured data extraction
+│   ├── interpretation_agent.py # Astrological interpretation
+│   └── language_agent.py     # Multi-language handling
+├── rag/
+│   ├── __init__.py
+│   ├── knowledge_base.py     # FAISS + astrology texts
+│   └── chat_engine.py        # RAG chat
+├── visualization/
+│   ├── __init__.py
+│   └── chart_renderer.py     # South Indian chart SVG
+├── data/
+│   └── astrology_knowledge.txt  # Built-in astrology knowledge base
+├── sample_data/
+│   └── sample_jathakam.txt
+├── requirements.txt
+└── README.md
+
+
+Key features:
+
+OCR Agent: Uses GPT-4o vision (if image) + EasyOCR fallback
+Extraction Agent: Extracts Rasi, Nakshatra, Lagna, planet positions as JSON
+Interpretation Agent: Career, personality, doshas
+Language Agent: Malayalam ↔ English ↔ Sanskrit translation
+RAG Chat: Chat with your horoscope
+South Indian Chart: SVG-based 4x4 grid visualization
+Insights Dashboard: Visual cards for each planet/house
+
+Let me build this comprehensively. I'll make it OpenAI-based (GPT-4o supports vision for image OCR).
+For the South Indian chart - it's a 4x4 grid with specific house positions:

@@ -1,0 +1,136 @@
+PEDIATRIC PATIENT REPORT
+========================
+
+Patient Information:
+  Name:        Emily Rodriguez
+  Age:         9 years
+  Sex:         Female
+  DOB:         June 3, 2015
+  Patient ID:  PT-PED-2024-00812
+  Visit Date:  December 2, 2024
+  Attending:   Dr. Marcus Webb, MD, FAAP
+  Department:  Pediatrics / Pulmonology
+
+Chief Complaint:
+  Recurrent episodes of wheezing, nighttime cough, and difficulty breathing
+  during physical activity. Parent reports third episode this month.
+
+Vital Signs:
+  Blood Pressure:   100/62 mmHg (Normal for age)
+  Heart Rate:       98 bpm (Normal)
+  Respiratory Rate: 22 breaths/min (slightly elevated)
+  Temperature:      98.8°F (37.1°C)
+  SpO2:             94% on room air (borderline low — normal ≥95%)
+  Weight:           29 kg (64 lbs) — 60th percentile for age
+  Height:           132 cm (51.9 in) — 55th percentile
+
+Medical History:
+  - Eczema (atopic dermatitis) since age 2 — managed with moisturisers and topical hydrocortisone
+  - Allergic rhinitis — seasonal, pollen and dust mite sensitisation
+  - No prior hospitalisation
+  - No prior asthma diagnosis (this visit likely first formal diagnosis)
+  - Paternal history of asthma (father, age 39)
+  - Maternal history of allergic rhinitis
+
+Allergies:
+  - Penicillin (rash) — documented
+  - House dust mites (environmental)
+  - Tree pollen (environmental)
+
+Current Medications:
+  1. Cetirizine 5mg — once daily (for allergic rhinitis, during allergy season)
+  2. Topical Hydrocortisone 1% cream — as needed for eczema flares
+  3. No current respiratory medications
+
+Presenting History:
+  Mother reports Emily has had worsening exercise-induced cough and wheeze over
+  the past 4 months. Episodes typically occur during or after running at school.
+  Nighttime cough wakes Emily 2–3 nights per week. No fever or sick contacts.
+  Recent cold 3 weeks ago appeared to trigger a more severe episode lasting 5 days.
+  Mother uses a fan in Emily's bedroom. No pets in home. Home is carpeted throughout.
+  School recently installed new flooring.
+
+Physical Examination:
+  General:    Alert, mildly anxious-appearing child in mild respiratory distress.
+  HEENT:      Nasal turbinate hypertrophy. Pale nasal mucosa. Bilateral tympanic
+              membranes clear. Cobblestoning of posterior pharynx.
+  Respiratory:  Mild expiratory wheezing bilaterally on auscultation.
+              Prolonged expiratory phase. Subcostal retractions present.
+              No use of accessory muscles at rest. Chest hyperinflation noted.
+  Cardiovascular: Regular rate and rhythm. No murmurs.
+  Skin:       Dry, lichenified patches in bilateral antecubital fossae (eczema).
+  Abdomen:    Soft, non-tender, no organomegaly.
+
+Pulmonary Function Testing (Spirometry):
+  FEV1:          72% of predicted  (↓ Low — normal ≥80%)
+  FVC:           85% of predicted  (Normal)
+  FEV1/FVC:     0.71               (↓ Low — confirms obstruction)
+  Post-bronchodilator FEV1: 88% of predicted (+16% improvement — significant reversibility)
+
+Allergy Testing (Skin prick):
+  Dust mites (Dermatophagoides farinae):  +++ (strong positive)
+  Tree pollen mix:                         ++  (moderate positive)
+  Grass pollen:                            +   (mild positive)
+  Cat dander:                              Negative
+  Dog dander:                              Negative
+  Mold mix:                                Negative
+  Cockroach:                               + (mild positive)
+
+Chest X-Ray:
+  Mild bilateral hyperinflation. No consolidation, effusion, or pneumothorax.
+  Findings consistent with obstructive airway disease.
+
+Diagnosis:
+  1. Moderate Persistent Asthma (newly diagnosed)
+     - Daytime symptoms >1 day/week, nighttime symptoms >1 night/week
+     - SpO2 94%, FEV1 72%, significant bronchodilator reversibility
+  2. Allergic sensitisation (house dust mites, pollen)
+  3. Atopic dermatitis (pre-existing, mild)
+  4. Allergic rhinitis (pre-existing, controlled)
+
+Asthma Action Plan:
+  Green Zone (Well controlled):
+    - Fluticasone 88mcg/puff — 2 puffs twice daily (controller)
+    - Montelukast 5mg once daily (leukotriene modifier — also helps rhinitis)
+    - Continue Cetirizine during allergy season
+
+  Yellow Zone (Worsening symptoms):
+    - Albuterol (Salbutamol) MDI 90mcg — 2–4 puffs every 4–6 hours PRN
+    - If no improvement in 24h or SpO2 <92%, seek urgent care
+
+  Red Zone (Emergency):
+    - Continuous albuterol via nebuliser
+    - Call 911 or go to ER immediately if severe difficulty breathing,
+      cyanosis, or unable to speak in full sentences
+
+Environmental Recommendations:
+  - Encase mattress and pillows in allergen-proof covers
+  - Wash bedding in hot water (≥130°F / 54°C) weekly
+  - Remove bedroom carpet; replace with hard flooring
+  - Use HEPA air purifier in bedroom
+  - Keep windows closed during high pollen days
+  - No tobacco smoke exposure (counsel parents)
+  - Avoid known triggers during exercise (consider pre-treatment with albuterol
+    15 minutes before exercise)
+
+Follow-up:
+  - 2 weeks: Reassess inhaler technique and symptom control
+  - 6 weeks: Spirometry repeat to assess controller therapy response
+  - Refer to Pediatric Allergy clinic for consideration of allergen immunotherapy
+
+Precautions for Parents & School:
+  - Provide school nurse with copy of Asthma Action Plan
+  - Ensure Albuterol inhaler is kept at school
+  - Inform PE teacher of diagnosis — Emily may need to pre-medicate before PE class
+  - Do not administer aspirin or NSAIDs (may worsen asthma in sensitive individuals)
+  - Watch for signs of anaphylaxis if new foods/exposures occur (carry antihistamine)
+
+Prognosis:
+  Asthma in children is manageable with proper controller therapy and trigger avoidance.
+  Many children show significant improvement or remission by adolescence with
+  appropriate treatment. Parental education and adherence to the action plan
+  are critical to good outcomes.
+
+Signed: Dr. Marcus Webb, MD, FAAP
+Pediatrics & Pulmonology | License #MC-447821
+December 2, 2024

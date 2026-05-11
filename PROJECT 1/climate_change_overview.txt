@@ -1,0 +1,75 @@
+# Climate Change: Science, Impacts, and Solutions
+
+## Understanding Climate Change
+
+Climate change refers to long-term shifts in global temperatures and weather patterns. While some climate change is natural, since the mid-20th century human activities have been the primary driver of climate change. The burning of fossil fuels like coal, oil, and natural gas releases carbon dioxide (CO₂) and other greenhouse gases that trap heat in the atmosphere.
+
+The Intergovernmental Panel on Climate Change (IPCC) has concluded with overwhelming scientific consensus that human-caused climate change is real, is occurring now, and poses serious risks to people and ecosystems worldwide.
+
+## The Greenhouse Effect
+
+The greenhouse effect is a natural process that warms Earth's surface. When the sun's energy reaches Earth, some is reflected back into space and some is absorbed, warming the planet. The warmed planet releases heat energy back into the atmosphere, where greenhouse gases absorb and re-emit it, warming the planet further.
+
+Key greenhouse gases include:
+- **Carbon Dioxide (CO₂)**: Released primarily from burning fossil fuels and deforestation
+- **Methane (CH₄)**: Emitted from livestock, rice paddies, landfills, and natural gas leaks
+- **Nitrous Oxide (N₂O)**: Released from agriculture, fertilizers, and industrial processes
+- **Fluorinated Gases**: Used in refrigerants and industrial applications
+
+## Current Observations
+
+Global average temperatures have risen approximately 1.1°C since the pre-industrial era. The last decade (2011-2020) was the warmest on record. Sea levels are rising at an accelerating rate due to melting ice sheets and thermal expansion of warming oceans. Arctic sea ice extent has decreased by about 13% per decade since 1979.
+
+Extreme weather events including heatwaves, heavy precipitation, and intense tropical cyclones have become more frequent and severe. Ocean acidity has increased by 26% since the Industrial Revolution as oceans absorb more CO₂.
+
+## Climate Impacts by Region
+
+### Arctic and Antarctic
+The polar regions are warming two to three times faster than the global average. The Greenland and Antarctic ice sheets are losing mass at accelerating rates. Arctic sea ice is declining in extent and thickness, affecting ecosystems and indigenous communities.
+
+### Coastal Areas
+Rising sea levels threaten low-lying coastal communities worldwide. Storm surge from tropical cyclones penetrates further inland as seas rise. Coastal erosion is destroying shorelines and infrastructure. Small island nations face an existential threat from sea level rise and increased storm intensity.
+
+### Tropical Regions
+Coral reefs are bleaching and dying as ocean temperatures rise. Changing rainfall patterns are affecting water availability in already water-stressed regions. Shifting climate zones are pushing tropical diseases to higher altitudes and latitudes.
+
+### Temperate Regions
+More frequent and severe wildfires are affecting forests across North America, Australia, and the Mediterranean. Changing precipitation patterns are causing both more severe droughts and more intense flooding events.
+
+## Solutions to Climate Change
+
+### Mitigation: Reducing Emissions
+
+**Renewable Energy**: Transitioning from fossil fuels to solar, wind, hydropower, and geothermal energy is essential. The costs of solar and wind power have dropped dramatically — by more than 85% over the past decade — making them the cheapest sources of new electricity generation in most of the world.
+
+**Energy Efficiency**: Improving the efficiency of buildings, vehicles, and industrial processes can significantly reduce energy demand. LED lighting, efficient appliances, and building insulation all reduce energy use.
+
+**Electrification**: Switching heating systems, cooking appliances, and vehicles from fossil fuels to electricity — powered by clean sources — reduces emissions across multiple sectors.
+
+**Carbon Capture**: Technologies that capture CO₂ from the atmosphere or industrial processes can help offset remaining emissions. Forests, soils, and wetlands are also important natural carbon sinks that need protection.
+
+**Transportation**: Electric vehicles, improved public transit, cycling infrastructure, and urban planning that reduces car dependency can dramatically cut transport emissions.
+
+### Adaptation: Coping with Change
+
+Even with aggressive mitigation, some degree of climate change is now unavoidable due to past emissions. Adaptation strategies help societies cope with unavoidable impacts:
+
+- Building sea walls and restoring natural coastal buffers
+- Developing drought-resistant crops and water-efficient agriculture
+- Creating early warning systems for extreme weather events
+- Designing cities to handle increased heat, flooding, and storms
+- Protecting and restoring ecosystems that buffer communities from climate impacts
+
+## International Climate Policy
+
+The Paris Agreement, adopted in 2015 by 196 countries, commits signatories to limiting global warming to well below 2°C above pre-industrial levels, with efforts to limit warming to 1.5°C. Countries submit Nationally Determined Contributions (NDCs) outlining their climate plans.
+
+The annual UN Climate Conferences (COP meetings) bring together world leaders to assess progress and strengthen commitments. COP26 in Glasgow and COP27 in Sharm el-Sheikh saw important pledges on coal phase-down and loss-and-damage funding.
+
+## Economic Considerations
+
+The economics of climate action favor action now over inaction. The Stern Review estimated that unmitigated climate change could cost 5-20% of global GDP, while mitigation costs would be around 1-2% of GDP. Clean energy industries are creating millions of jobs worldwide. Climate change poses substantial financial risks to businesses and investors, driving increased attention to climate-related financial disclosures.
+
+## Conclusion
+
+Climate change is one of the defining challenges of the 21st century. The science is clear that urgent action is needed to reduce greenhouse gas emissions and help communities adapt to unavoidable changes. The good news is that solutions exist, clean energy costs are falling rapidly, and there is growing political will to act. The challenge is scaling up action fast enough to avoid the worst impacts while building resilience to the changes already underway.
