@@ -43,7 +43,7 @@ Answer + Sources
 | 2. Embed | `SentenceTransformer` | `all-MiniLM-L6-v2`, 384 dims |
 | 3. Index | `FAISS` | `IndexFlatIP` with L2-normalised vectors |
 | 4. Retrieve | `VectorStore.search` | Cosine similarity, top-K |
-| 5. Generate | `Claude` | Context-grounded generation with source citation |
+| 5. Generate | `Gpt` | Context-grounded generation with source citation |
 
 ---
 
@@ -62,7 +62,7 @@ pip install -r requirements.txt
 Get your key from https://console.anthropic.com and paste it into the **Settings** tab (or set env var):
 
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-...
+export OPENAI_API_KEY=sk-....
 ```
 
 ### 3. Run
@@ -117,7 +117,7 @@ Orchestrates the full workflow: ingest files → embed chunks → store in FAISS
 | `top_k` | 5 | Number of chunks to retrieve |
 | `temperature` | 0.3 | LLM sampling temperature |
 | `max_tokens` | 1024 | Max LLM response tokens |
-| `llm_model` | `claude-sonnet-4-20250514` | Anthropic model |
+| `llm_model` | `OpenAI-Gpt 4o` | OpenAI model |
 
 ---
 
@@ -167,7 +167,7 @@ Combine dense vector search with BM25 keyword search for hybrid retrieval.
 ```
 sentence-transformers>=2.7.0   # Embeddings
 faiss-cpu>=1.8.0               # Vector search
-anthropic>=0.30.0              # LLM (Claude)
+OpenAI Gpt-4o                  # LLM (OpenAI gpt-4o)
 pypdf>=4.3.0                   # PDF parsing
 python-docx>=1.1.2             # DOCX parsing
 gradio>=4.40.0                 # UI
@@ -182,4 +182,4 @@ MIT — free to use, modify, and distribute.
 
 ---
 
-*Built with ❤️ using FAISS · sentence-transformers · Gradio · Anthropic Claude*
+*Built with ❤️ using FAISS · sentence-transformers · Gradio · OpenAI-gpt-4o*
