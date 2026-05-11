@@ -1,6 +1,6 @@
 # 🔍 RAG Intelligence
 
-**An end-to-end Retrieval-Augmented Generation (RAG) system built with Gradio, FAISS, sentence-transformers, and Anthropic Claude.**
+**An end-to-end Retrieval-Augmented Generation (RAG) system built with Gradio, FAISS, sentence-transformers, and OpenAI gpt.**
 
 ---
 
