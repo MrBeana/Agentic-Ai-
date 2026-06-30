@@ -12,7 +12,7 @@
 ## 🚀 Features
 
 - **📄 API Documentation** — Full function/method/class docs with params, return types, exceptions, and examples
-- **📖 README Generator** — Professional README with install steps, usage, structure, and badges
+- **📖 README Generator and ppt** — Professional README with install steps, usage, structure, and badges
 - **🏛 Architecture Summaries** — High-level system overview, component breakdown, data flow, and design patterns
 - **⚡ Streaming Output** — See documentation generate in real time
 - **📂 File Upload** — Paste code or upload `.py`, `.js`, `.ts`, `.go`, `.rs`, `.java`, and more
