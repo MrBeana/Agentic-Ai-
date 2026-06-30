@@ -143,6 +143,7 @@ An AI-powered documentation generator that automatically creates professional te
 * API Documentation
 * README Generator
 * Architecture Summary
+* ppt generator
 
 ### Features
 
