@@ -260,9 +260,9 @@ AI-Portfolio/
 
 **Harikrishnan G Naik**
 
-* 💼 LinkedIn: *Add your LinkedIn profile*
-* 💻 GitHub: *Add your GitHub profile*
-* 📧 Email: *Add your email address*
+* 💼 LinkedIn: *https://www.linkedin.com/in/harikrishnan-g-naik-a1a5b2233/*
+* 💻 GitHub: *https://github.com/MrBeana*
+* 📧 Email: *harikrishnangnaik@gmail.com*
 
 ---
 
